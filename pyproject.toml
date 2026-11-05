@@ -1,6 +1,6 @@
 [project]
 name = "pushbuild-mcp"
-version = "0.1.0"
+version = "0.2.0"
 description = "MCP server for 400+ official public-data APIs: elections, campaign finance, courts, permits, inspections, SEC filings, economic statistics"
 readme = "README.md"
 license = {text = "MIT"}
