@@ -5,7 +5,7 @@ and call_api (runs it through the REST API with your key). Standard library only
 """
 import json, os, re, sys, urllib.error, urllib.request
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 BASE = os.environ.get("PUSHBUILD_BASE_URL", "https://api.pushbuild.com")
 KEY = os.environ.get("PUSHBUILD_API_KEY", "")
 SIGNUP = "https://pushbuild.com/apis/app/signup"
@@ -19,8 +19,8 @@ TOOLS = [
      "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Keywords."},
                      "limit": {"type": "integer", "description": "Max results (default 10)."}}, "required": ["query"]}},
     {"name": "describe_api", "title": "Describe an API", "annotations": dict(RO, title="Describe an API"),
-     "description": "Input parameters (JSON Schema) and coverage of one API id from search_apis. No key needed.",
-     "inputSchema": {"type": "object", "properties": {"api": {"type": "string", "description": "API id, e.g. restaurant-inspections."}}, "required": ["api"]}},
+     "description": "Show how to call one API before running it: its name, summary, input parameters (JSON Schema with types, enums and defaults) and docs link. Use after search_apis and before call_api. Read-only, no key needed, no usage charged.",
+     "inputSchema": {"type": "object", "properties": {"api": {"type": "string", "description": "API id exactly as search_apis returned it (lowercase, hyphenated), e.g. restaurant-inspections."}}, "required": ["api"]}},
     {"name": "call_api", "title": "Run an API", "annotations": dict(RO, title="Run an API"),
      "description": "Run one API with parameters from describe_api and return JSON records (default 20; set maxItems up to 500). Needs PUSHBUILD_API_KEY (free key with monthly free usage: " + SIGNUP + ").",
      "inputSchema": {"type": "object", "properties": {"api": {"type": "string", "description": "API id."},
