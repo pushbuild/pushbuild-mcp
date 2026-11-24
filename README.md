@@ -1,5 +1,7 @@
 # pushbuild-mcp
 
+[![pushbuild/pushbuild-mcp MCP server](https://glama.ai/mcp/servers/pushbuild/pushbuild-mcp/badges/score.svg)](https://glama.ai/mcp/servers/pushbuild/pushbuild-mcp)
+
 A local (stdio) MCP server for the Pushbuild data APIs: 400+ official public-data sources, each returning clean JSON records with a stated source. Coverage includes US election results and campaign finance, lobbying, court cases, restaurant inspections, building permits, business registries, SEC filings and 13F holdings, recalls, sanctions lists, central bank and economic statistics, and weather.
 
 It runs on your machine and needs nothing beyond Python 3.9+. Search runs locally over the public catalog (https://api.pushbuild.com/llms.txt), describe reads each API's OpenAPI spec, and call_api runs the API through the Pushbuild REST API with your key.
